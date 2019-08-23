@@ -34,7 +34,7 @@ void hsiToRgb(int h, float s, float i){
      c = (1.0 - abs(2*i-1))*s;
      x = (1.0 - abs(((h/60)%2)-1.0))*c;
      m= i - c/2.0; 
-     printf("c %f, x%f ,m%f\n", c,x,m);
+     //printf("c %f, x%f ,m%f\n", c,x,m);
     if(h>=0 && h<60){
          printf("if 1\n");
          r = c;
@@ -80,8 +80,24 @@ void hsiToRgb(int h, float s, float i){
 }
 
 int main (){
-    rgbToHsi(80,250,30);
-    hsiToRgb(180,1.0,0.5);
+    float r,g,b, s,i;
+    int h;
+    printf("Introduza valores para conversão de rgb para hsi\n");
+    printf("Valor de R\n");
+    scanf("%f", &r);
+    printf("Valor de g\n");
+    scanf("%f", &g);
+    printf("Valor de b\n");
+    scanf("%f", &b);
+    rgbToHsi(r,g,b);
+    printf("Introduza valores para conversão de hsi para rgb\n");
+    printf("Valor de h\n");
+    scanf("%d", &h);
+    printf("Valor de s\n");
+    scanf("%f", &s);
+    printf("Valor de i\n");
+    scanf("%f", &i);
+    hsiToRgb(h,s,i);
     return 0;
 
 }
